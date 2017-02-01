@@ -1,0 +1,17 @@
+{
+  "name": "kwg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nf start"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "foreman": "^2.0.0",
+    "swearjar": "^0.1.3",
+    "twit": "^2.2.5",
+    "winston": "^2.3.1",
+    "winston-papertrail": "^1.0.4"
+  }
+}
