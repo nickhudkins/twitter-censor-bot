@@ -4,7 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nf start"
+    "start": "nf start",
+    "unignore:env": "sed -i '' '1s/.*\\.env/#\\.env/' .gitignore",
+    "ignore:env": "sed -i '' '1s/#\\.env/\\.env/' .gitignore",
+    "predeploy": "npm run unignore:env",
+    "deploy": "now",
+    "postdeploy": "npm run ignore:env"
   },
   "dependencies": {
     "chalk": "^1.1.3",
