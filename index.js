@@ -1,3 +1,4 @@
+const app = require('express')();
 const logger = require('./logger');
 const swearjar = require('swearjar');
 const createTwitterStreamListener = require('./stream');
@@ -17,3 +18,9 @@ function tweetFriendlierVersionOfTweet(tweet, T) {
 createTwitterStreamListener({
   onTweet: tweetFriendlierVersionOfTweet,
 });
+
+/* This will keep the service running. I am sorry PaaS providers. */
+app.get('/keepalive', (req, res) => res.send('ok'));
+app.listen(3000, (err) => {
+  logger.info('Listening...');
+})
